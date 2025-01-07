@@ -1,6 +1,7 @@
 -- NEOVIM CONFIG --
 -- Author: @thaisonho
 
+require("config.lazy")
 local settings = require('settings')
 local keymaps = require('keymaps')
 
