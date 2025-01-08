@@ -2,8 +2,8 @@
 -- Author: @thaisonho
 
 require("config.lazy")
-local settings = require('settings')
-local keymaps = require('keymaps')
+local settings = require('json.settings')
+local keymaps = require('json.keymaps')
 
 -- Settings
 settings.basic_settings()
