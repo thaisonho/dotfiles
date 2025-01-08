@@ -28,6 +28,6 @@ stow .
 
 Now you have it! :DD
 
-## LICENSE
+## License
 
 This project is licensed under MIT License
