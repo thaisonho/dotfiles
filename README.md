@@ -27,3 +27,7 @@ stow .
 ```
 
 Now you have it! :DD
+
+## LICENSE
+
+This project is licensed under MIT License
