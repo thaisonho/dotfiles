@@ -36,10 +36,10 @@ return {
             {text = " ", texthl = "DiagnosticSignInfo"})
         vim.fn.sign_define("DiagnosticSignHint",
             {text = "󰌵", texthl = "DiagnosticSignHint"})
-        
-        require('neo-tree').setup({
+        -- Keymap
+        vim.keymap.set('n', '<leader>tt', ':Neotree filesystem reveal left<CR>', { desc = 'Open Neotree' })
+        vim.keymap.set("n", "<leader>tr", ":Neotree filesystem close <CR>", { desc = 'Close Neotree'})
 
-        })
         vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end
 }

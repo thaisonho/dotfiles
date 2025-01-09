@@ -29,6 +29,7 @@ function M.basic_settings()
 end
 
 -- Transparent background
+-- NOTED: Don't need this anymore bc Catppuccin supports transparent background
 function M.transparent_background()
     -- Modern API calls for transparency
     local highlights = {

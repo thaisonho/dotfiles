@@ -7,7 +7,7 @@ local keymaps = require('json.keymaps')
 
 -- Settings
 settings.basic_settings()
-settings.transparent_background()
+-- settings.transparent_background()
 
 -- Keymaps
 keymaps.basic_keymaps()
