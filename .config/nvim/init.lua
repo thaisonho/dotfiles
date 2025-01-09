@@ -7,6 +7,7 @@ local keymaps = require('json.keymaps')
 
 -- Settings
 settings.basic_settings()
+-- Didn't need to use this any more bc Catppuccin already supports transparent
 -- settings.transparent_background()
 
 -- Keymaps
