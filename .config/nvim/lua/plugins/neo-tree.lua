@@ -185,7 +185,8 @@ return {
             ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
             ["d"] = "delete",
             ["r"] = "rename",
-            ["b"] = "rename_basename",
+            -- This does not work somehow so I currently comment it :D 
+            -- ["b"] = "rename_basename",
             ["y"] = "copy_to_clipboard",
             ["x"] = "cut_to_clipboard",
             ["p"] = "paste_from_clipboard",
@@ -326,9 +327,8 @@ return {
         }
       })
       -- Keymap
-      vim.keymap.set('n', '<leader>tt', ':Neotree filesystem reveal left<CR>', { desc = 'Open Neotree' })
-      vim.keymap.set("n", "<leader>tr", ":Neotree filesystem close <CR>", { desc = 'Close Neotree'})
+      vim.keymap.set('n', '<leader>tt', ':Neotree filesystem reveal left<CR>', { desc = 'Open Neotree', silent = true })
+      vim.keymap.set("n", "<leader>tr", ":Neotree filesystem close <CR>", { desc = 'Close Neotree', silent = true})
 
-      vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end,
 }
