@@ -12,7 +12,7 @@ function M.basic_settings()
     vim.opt.syntax = "on"
     vim.opt.signcolumn = "yes"
     vim.opt.showmode = true
-
+    vim.opt.cursorline = true
     -- Clipboard integration
     local ok, _ = pcall(function()
         -- Check if system has xclip or wl-clipboard
