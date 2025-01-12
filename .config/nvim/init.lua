@@ -9,6 +9,6 @@ local keymaps = require('json.keymaps')
 settings.basic_settings()
 -- Didn't need to use this any more bc Catppuccin already supports transparent
 -- settings.transparent_background()
-
+settings.highlight_when_yanking()
 -- Keymaps
 keymaps.basic_keymaps()
