@@ -16,10 +16,11 @@ function M.basic_settings()
     vim.opt.showmode = true
     vim.opt.cursorline = true
     vim.opt.autoindent = true
+    vim.opt.breakindent = true
     -- Clipboard integration
     local ok, _ = pcall(function()
         -- Check if system has xclip or wl-clipboard
-        local clipboard_cmd = vim.fn.executable('xclip') == 1 and 'xclip' 
+        local clipboard_cmd = vim.fn.executable('xclip') == 1 and 'xclip'
             or vim.fn.executable('wl-copy') == 1 and 'wl-clipboard'
             or nil
 

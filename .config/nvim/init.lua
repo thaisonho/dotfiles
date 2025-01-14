@@ -2,13 +2,13 @@
 -- Author: @thaisonho
 
 require("config.lazy")
-local settings = require('json.settings')
+local setting = require('json.settings')
 local keymaps = require('json.keymaps')
 
 -- Settings
-settings.basic_settings()
+setting.basic_settings()
 -- Didn't need to use this any more bc Catppuccin already supports transparent
 -- settings.transparent_background()
-settings.highlight_when_yanking()
+setting.highlight_when_yanking()
 -- Keymaps
 keymaps.basic_keymaps()
