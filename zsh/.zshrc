@@ -1,22 +1,25 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-
-# Check if Oh My Zsh is installed
-if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
-  # Navigate to the home directory and run the Oh My Zsh install script
-  (cd "$HOME" && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)")
-fi
-
-
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="ys"
+# ZSH_THEME="catppuccin"
+# CATPPUCCIN_FLAVOR="macchiato" # Required! Options: mocha, flappe, macchiato, latte
+# CATPPUCCIN_SHOW_TIME=true  # Optional! If set to true, this will add the current time to the prompt.
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -33,7 +36,7 @@ ZSH_THEME="ys"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -78,7 +81,11 @@ ZSH_THEME="ys"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
+	git
+	history
+	safe-paste
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,5 +118,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export LS_OPTIONS="-lAh --color=auto"
+alias ls="ls $LS_OPTIONS"
 alias cls="clear"
-alias ls="ls --color=auto -lah"
+umask 027
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
